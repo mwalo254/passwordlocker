@@ -1,4 +1,4 @@
-## passwordlocker
+# passwordlocker
 
 # Project overveiw
 It becomes really hard to remember all those passwords and create new ones for all apps we use. This app helps a user save and generate passwords.
@@ -7,6 +7,7 @@ It becomes really hard to remember all those passwords and create new ones for a
 nick mwalo
 
 # Author details
+contact: 0792147071
 Email: mwalonick@gmail.com
 
 ## Description
