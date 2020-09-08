@@ -105,23 +105,24 @@ def main():
                         print('to navigate to account use code:\n sm = to add a social media account, \n dc = to display accounts \n cy = to copy  password \n dlt = to delete \n ex- Exit')
                         short_code=input('Enter a choice: ').lower().strip()
                         print("_"*40)
+                        somedia = ""
+                        
                         if short_code =='ex':
                             print(' ')   
                             print(f'Thank you! {lockname}.')
                             break
 
                         elif short_code == 'dlt':
-
                             print("_"*40)
                             print(' ')
                             print('Successfully Deleted!')
                             break
+                        
                         elif short_code =='sm':
                             print(' ')
                             print('Enter your account name: ')
                             somedia = input('enter the the social media\'s name:  ').strip() 
                             username = input('enter your account\'s username:  ').strip()
-                            
                             
                             while True:
                                 print(' ')
@@ -129,6 +130,7 @@ def main():
                                 print("please enter the choose for entering password for your account: \n pwd = enter existing password \n gp-generate a new password \n dlt- delete \n ex- Exit")
                                 opt_choice = input('Enter an option: ').lower().strip()
                                 print("-"*80)
+                                
                                 if opt_choice == 'pwd':
                                     print(" ")
                                     accpassword = input('enter your password: ').strip()
@@ -143,33 +145,40 @@ def main():
                                 elif opt_choice == 'gp':
                                     password = generate_newpassword()
                                     break
+                                
                                 elif opt_choice == 'ex':
                                     break
+                                
                                 else:
                                     print('Try Again!.')
+                            
                             save_account(create_account(somedia,username,accpassword))
                             print(' ')
                             print(f'Account Created: Name:  {somedia}, userName:{username}, Password:{accpassword}')
                             print(' ')
+                        
                         elif short_code == 'dc':
                             print(' ')
+                            
                             if display_accounts(somedia):
                                 print('Here is a list of all accounts')
                                 print(' ')
                                 for account in display_accounts(somedia):
                                     print(f'social media name: {account.somedia} - username: {account.username} - Password: {account.accpassword}')
                                     print(' ')
+                            
                             else:
                                 print(' ')
                                 print("you don't seem to have any account")
-                                print(' ')
-                    
+                                print(' ')                    
+                        
                         elif short_code =='cy':
                             print(' ')
                             chosen_account = input("enter the name of social media account: ")
 
                             copy_account(chosen_account)
                             print(' ')
+                        
                         else: 
                             print('TRY Again')
                 
@@ -177,8 +186,6 @@ def main():
                     print(' ')
                     print('TRY Again or create another account.')
 
-                 
-         
         else:
                 print("_"*40)
                 print(' ')
